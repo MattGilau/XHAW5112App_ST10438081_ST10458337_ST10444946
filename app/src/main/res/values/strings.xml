@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">XHAW5112-MobileApp</string>
+    <string-array name="dropdown_FA">
+        <item>Content:</item>
+        <item>Wounds and bleeding</item>
+        <item>Burns and fractures</item>
+        <item>Emergency scene management</item>
+        <item>Cardio-Pulmonary Resuscitation (CPR)</item>
+        <item>Respiratory distress e.g., Choking, blocked airway</item>
+    </string-array>
+    <string-array name="dropdown_Sew">
+        <item>Content:</item>
+        <item>Types of stitches</item>
+        <item>Threading a sewing machine</item>
+        <item>Sewing buttons, zips, hems and seams</item>
+        <item>Alterations</item>
+        <item>Designing and sewing new garments</item>
+    </string-array>
+    <string-array name="dropdown_Land">
+        <item>Content:</item>
+        <item>Indigenous and exotic plants and trees</item>
+        <item>Fixed structures (fountains, statues, benches, tables, built-in braai)</item>
+        <item>Balancing of plants and trees in a garden</item>
+        <item>Aesthetics of plant shapes and colours</item>
+        <item>Garden layout</item>
+    </string-array>
+    <string-array name="dropdown_LS">
+        <item>Content:</item>
+        <item>Opening a bank account</item>
+        <item>Basic labour law (know your rights)</item>
+        <item>Basic reading and writing literacy</item>
+        <item>Basic numeric literacy</item>
+    </string-array>
+    <string-array name="dropdown_C">
+        <item>Content:</item>
+        <item>Nutritional requirements for a healthy body</item>
+        <item>Types of protein, carbohydrates and vegetables</item>
+        <item>Planning meals</item>
+        <item>Preparation and cooking of meals</item>
+    </string-array>
+    <string-array name="dropdown_CM">
+        <item>Content:</item>
+        <item>Birth to six-month old baby needs</item>
+        <item>Seven-month to one year old needs</item>
+        <item>Toddler needs</item>
+        <item>Educational toys</item>
+    </string-array>
+    <string-array name="dropdown_GM">
+        <item>Content:</item>
+        <item>Water restrictions and the watering requirements of indigenous and exotic plants</item>
+        <item>Pruning and propagation of plants</item>
+        <item>Planting techniques for different plant types</item>
+    </string-array>
+</resources>
