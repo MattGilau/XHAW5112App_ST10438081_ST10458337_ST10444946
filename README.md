@@ -1,4 +1,5 @@
 Empowering the Nation App
+
 Overview
 This project is an Android mobile application designed for Empowering the Nation, a skills development enterprise that offers various courses like First Aid, Landscaping, Life Skills, and more. 
 The app allows users to calculate course fees, view short and long courses, and contact the enterprise for more information. The project also includes user input validation for name, phone number, and email.
