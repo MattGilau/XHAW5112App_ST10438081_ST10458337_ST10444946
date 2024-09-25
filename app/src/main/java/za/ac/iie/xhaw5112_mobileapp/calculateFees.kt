@@ -32,6 +32,8 @@ class calculateFees : AppCompatActivity() {
     private lateinit var checkBoxChildMinding: CheckBox                                             //(Mhlanga, 2024)
     private lateinit var checkBoxGardenMaintenance: CheckBox                                        //(Mhlanga, 2024)
     private lateinit var totalTextView: TextView                                                    //(Mhlanga, 2024)
+    private lateinit var totalDiscountTextView: TextView                                            //(Mhlanga, 2024)
+    private lateinit var totalVATTextView: TextView                                                 //(Mhlanga, 2024)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +58,8 @@ class calculateFees : AppCompatActivity() {
         checkBoxChildMinding = findViewById(R.id.checkBoxChildMinding)                              //(Mhlanga, 2024)
         checkBoxGardenMaintenance = findViewById(R.id.checkBoxGardenMaintenance)                    //(Mhlanga, 2024)
         totalTextView = findViewById(R.id.totalTextView)                                            //(Mhlanga, 2024)
+        totalDiscountTextView = findViewById(R.id.totalDiscountTextView)                            //(Mhlanga, 2024)
+        totalVATTextView = findViewById(R.id.totalVATTextView)                                      //(Mhlanga, 2024)
 
         // Set up button click listeners
         homeButton()                                                                                //(IIE, 2024)
@@ -243,12 +247,28 @@ class calculateFees : AppCompatActivity() {
             }
         }
         // Apply discount based on the number of selected courses
-        val discount = when (selectedCourses) {                                                     //(IIE, 2024)
-            1 -> 0.0                                                                                //(IIE, 2024)
-            2 -> 0.05                                                                               //(IIE, 2024)
-            3 -> 0.10                                                                               //(IIE, 2024)
-            else -> 0.15                                                                            //(IIE, 2024)
+        var discount = 0.0                                                                          //(IIE, 2024)
+        var discountPercentage = "0%"                                                               //(IIE, 2024)
+
+        when (selectedCourses) {                                                                    //(IIE, 2024)
+            1 -> {                                                                                  //(IIE, 2024)
+                discount = 0.0
+                discountPercentage = "0%"
+            }
+            2 -> {                                                                                  //(IIE, 2024)
+                discount = 0.05
+                discountPercentage = "5%"
+            }
+            3 -> {                                                                                  //(IIE, 2024)
+                discount = 0.10
+                discountPercentage = "10%"
+            }
+            else -> {                                                                               //(IIE, 2024)
+                discount = 0.15
+                discountPercentage = "15%"
+            }
         }
+
         // Apply discount to total
         val discountedTotal = total - (total * discount)                                            //(IIE, 2024)
         // Add VAT (15%)
@@ -256,7 +276,9 @@ class calculateFees : AppCompatActivity() {
         val totalWithVAT = discountedTotal + (discountedTotal * vat)                                //(IIE, 2024)
 
         // Display the total with VAT applied
-        totalTextView.text = "Total = R${"%.2f".format(totalWithVAT)}"                              //(Mhlanga, 2024)
+        totalDiscountTextView.text = "Discounted Total = R${"%.2f".format(discountedTotal)} ($discountPercentage Discount)"//(Mhlanga, 2024)
+        totalVATTextView.text = "Total with VAT = R${"%.2f".format(totalWithVAT)}"                  //(Mhlanga, 2024)
+        totalTextView.text = "Quote Total = R${"%.2f".format(totalWithVAT)}"                        //(Mhlanga, 2024)
 
     }
 
@@ -267,6 +289,9 @@ class calculateFees : AppCompatActivity() {
         enterNameS.text.clear()                                                                     //(IIE, 2024)
         enterPhone.text.clear()                                                                     //(IIE, 2024)
         enterEmail.text.clear()                                                                     //(IIE, 2024)
+        totalTextView.text = "Total = R0"                                                           //(IIE, 2024)
+        totalDiscountTextView.text = "Discounted Total = R0 (0% discount)"                          //(IIE, 2024)
+        totalVATTextView.text = "Total with VAT = R0"                                               //(IIE, 2024)
         listOf(checkBoxFirstAid, checkBoxSewing, checkBoxLandscaping, checkBoxLifeSkills,           //(OpenAI, 2024)
             checkBoxCooking, checkBoxChildMinding, checkBoxGardenMaintenance).forEach { it.isChecked = false }
         totalTextView.text = "Total = R0"                                                           //(IIE, 2024)

@@ -210,6 +210,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
+    <TextView
+        android:id="@+id/totalDiscountTextView"
+        android:layout_width="400dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Discount: 0%"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCal" />
+
+    <TextView
+        android:id="@+id/totalVATTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="VAT: R 0.00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalDiscountTextView" />
+
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
